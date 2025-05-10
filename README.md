@@ -6,7 +6,7 @@
 
 ## **Introduction**
 
-This repository fine-tunes a T5-small & DistillBert-inspec backbone with **LoRA (Low-Rank Adaptation)** for automatic keyword extraction.  
+This repository includes fine-tuning a T5-small & DistillBert-inspec backbone with **LoRA (Low-Rank Adaptation)** for automatic keyword extraction, using Promopt Engineering to optimize answersm, and using traditional models to compare the performance in keyword extraction.
 Key highlights:
 
 - **PEFT**-style training—updates < 1 % of parameters.  
@@ -41,7 +41,6 @@ pip install -r requirements.txt          # transformers, peft, datasets, …
 | `finetune_lora_T5.py` | Fine-tunes a T5-small model using LoRA (Low-Rank Adaptation). Supports full training config customization including LoRA rank, alpha, dropout, learning rate, and batch size. |
 | `prediction_T5.py`    | Loads the base T5-small model and LoRA adapter to generate comma-separated keywords for each input text.|
 | `evaluate.py`         | Computes Precision@K, Recall@K, and F1@K for predicted vs. ground truth keywords. Supports both exact matching and semantic similarity (via Sentence-BERT). |
-| `baseline/`           | |
 | `data/*`              | Preprocessed Train and Test data. |
 | `demo/*`              | Examples of outputs. |
 | `requirements.txt`    | Dependency Library|
